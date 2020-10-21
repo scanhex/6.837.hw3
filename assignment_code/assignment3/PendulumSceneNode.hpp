@@ -15,7 +15,7 @@
 
 namespace GLOO {
 
-const ParticleState initial_state{{{0, 2, 0}, {0, 2, -1}, {0, 3, -2}, {0, 1, -3}, {0, 2, -4}}};
+const ParticleState initial_state{{{0, 0, 0}, {0, 0, -1}, {0, 1, -2}, {0, -1, -3}, {0, 0, -4}}};
 const std::vector<float> coefs{1, 1, 1, 1};
 const std::vector<float> masses{1, 1, 1, 1, 1};
 
@@ -46,7 +46,7 @@ public:
       system_.AddParticle(mass, 0.1);
     system_.setFix(0, true);
     for (size_t i = 0; i + 1 < masses.size(); ++i)
-      system_.AddSpring(i, i + 1, glm::length(initial_state.positions[i + 1] - initial_state.positions[i]), 1);
+      system_.AddSpring(i, i + 1, 1, state_);
   }
 };
 }

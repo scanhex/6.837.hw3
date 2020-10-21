@@ -10,11 +10,14 @@ public:
     drag_coefs_.push_back(drag);
     fixed_.push_back(false);
   }
-  void AddSpring(size_t i, size_t j, float len, float coef) {
-    springs_.emplace_back(i, j, len, coef);
+  void AddSpring(size_t i, size_t j, float coef, const ParticleState& state) {
+    springs_.emplace_back(i, j, glm::length(state.positions[i] - state.positions[j]), coef);
   }
   void setFix(size_t i, bool fix) {
     fixed_[i] = fix;
+  }
+  const std::vector<std::tuple<size_t, size_t, float, float>>& GetSprings() {
+    return springs_;
   }
   ParticleState ComputeTimeDerivative(const ParticleState& state,
                                       float time) const override {

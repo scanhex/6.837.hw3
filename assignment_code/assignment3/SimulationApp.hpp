@@ -20,9 +20,5 @@ class SimulationApp : public Application {
  private:
   IntegratorType integrator_type_;
   float integration_step_;
-  SimpleSceneNode* simple_;
-  PendulumSceneNode* pendulum_;
-//  ODESceneNode<PendulumSystem, ParticleState> pendulum_;
-//  ODESceneNode<ClothSystem, ParticleState> cloth_;
 };
 }  // namespace GLOO

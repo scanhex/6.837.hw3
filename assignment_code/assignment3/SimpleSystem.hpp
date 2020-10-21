@@ -8,7 +8,7 @@ public:
   ParticleState ComputeTimeDerivative(const ParticleState& state,
                                               float time) const override {
     auto pos = state.positions[0];
-    return ParticleState{.positions = {{-pos.y, pos.x, pos.z}}, .velocities = {{0,0,0}}};
+    return ParticleState{.positions = {{-pos.y, pos.x, 0}}, .velocities = {{0,0,0}}};
   }
 };
 }

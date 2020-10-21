@@ -1,5 +1,4 @@
-#ifndef HELPERS_H_
-#define HELPERS_H_
+#pragma once
 
 #include "gloo/utils.hpp"
 #include "gloo/alias_types.hpp"
@@ -9,4 +8,3 @@ std::unique_ptr<NormalArray> CalculateNormals(const PositionArray& positions,
                                               const IndexArray& indices);
 }
 
-#endif
